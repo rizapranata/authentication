@@ -11,6 +11,7 @@ import AuthContextProvider, { AuthContext } from "./store/auth-context";
 import IconButton from "./components/ui/IconButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AppLoading from "expo-app-loading";
+import { Text } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -87,7 +88,8 @@ function Root() {
   }, []);
 
   if (isTryingLogin) {
-    return <AppLoading /> //deprecated
+    // return <AppLoading /> //deprecated
+    return <Text>Loading...</Text>
   }
 
   return <Navigation />
